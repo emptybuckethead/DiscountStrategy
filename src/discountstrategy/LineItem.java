@@ -18,7 +18,7 @@ public class LineItem {
     //constructor-- pass in productID and quantity
     public LineItem(String prodId, int qty, DataAccessStrategy db) {
         this.db = db;
-        product = db.findProduct(prodId);
+        setProduct(db.findProduct(prodId));
         this.qty = qty;
     }
     
@@ -52,6 +52,22 @@ public class LineItem {
 
     public void setQty(int qty) {
         this.qty = qty;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public DataAccessStrategy getDb() {
+        return db;
+    }
+
+    public void setDb(DataAccessStrategy db) {
+        this.db = db;
     }
 
 

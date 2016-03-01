@@ -24,14 +24,14 @@ public class StartUp {
         
         //test so far..
         Customer customer = register.getReceipt().getCustomer();
-        System.out.println("Customer", + customer.getCustName() + "found and added to receipt");
+        System.out.println("Customer" + customer.getCustName() + "found and added to receipt");
         
-        register.addItemToSale("11", 12);
-        register.addItemToSale("22", 1);
+        register.addItemToSale("A101", 2);
+        register.addItemToSale("B205", 1);
         
         LineItem[] items = register.getReceipt().getLineItems();
         for(LineItem item: items){
-            System.out.println(item.getProductId().getProdName());
+            System.out.println(item.getProductId() + item.getProductName());
         }
         
     }

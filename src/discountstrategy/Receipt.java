@@ -17,9 +17,10 @@ public class Receipt {
     public Receipt(String custId, DataAccessStrategy db) {
         customer = db.findCustomer(custId);
         lineItems = new LineItem[0]; 
+        this.db = db;
     }
     // method to add new line item to receipt
-    public final void addLineItem(String prodId, int qty) {
+    public final void addItemToReceipt(String prodId, int qty) {
         LineItem item = new LineItem(prodId, qty, db);
         addToArray(lineItems, item);
     }
@@ -28,7 +29,7 @@ public class Receipt {
         // needs validation
         LineItem[] tempArray = new LineItem[origArray.length + 1];
         System.arraycopy(origArray, 0, tempArray, 0, origArray.length);
-        tempArray[origArray.length - 1] = item;
+        tempArray[tempArray.length-1] = item;
         origArray = tempArray;
         lineItems = origArray;
     }
