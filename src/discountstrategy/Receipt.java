@@ -14,6 +14,7 @@ public class Receipt {
     private LineItem[] lineItems; 
     private DataAccessStrategy db;
     
+    
     public Receipt(String custId, DataAccessStrategy db) {
         customer = db.findCustomer(custId);
         lineItems = new LineItem[0]; 
@@ -32,6 +33,14 @@ public class Receipt {
         tempArray[tempArray.length-1] = item;
         origArray = tempArray;
         lineItems = origArray;
+    }
+    //get the total price of the items
+    public double subtotalCost(){
+        double sum = 0;
+            for (double i : LineItem[2]){
+                sum += i;
+            }
+            return sum;
     }
     //trick to fake resize of a Java Array
     //take the original array let's call it "theOriginal Array"

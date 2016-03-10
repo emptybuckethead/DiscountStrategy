@@ -15,9 +15,7 @@ public class Product {
     private String name;
     private DiscountStrategy discount; 
 
-    public Product(double unitPrice) {
-        this.unitPrice = unitPrice;
-    }
+   
 
     public Product(String prodId, String name, double unitPrice, DiscountStrategy discount) {
         this.prodId = prodId;
@@ -57,10 +55,6 @@ public class Product {
     public void setUnitPrice(double unitPrice) {
         this.unitPrice = unitPrice;
     }
-//    public static void main(String[] args){
-//        Product product = new Product(19.95, "a100", "baseball hat", new PercentOffDiscount(.10));
-//        
-//        double amt = Product.getDiscount(2);
-//        System.out.println("...");
+
     }
 

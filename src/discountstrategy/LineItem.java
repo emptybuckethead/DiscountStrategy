@@ -15,6 +15,16 @@ public class LineItem {
     private Product product;
     private DataAccessStrategy db;
     
+    //calculates the subtotal (EXt. Price)
+    public final double getExtPrice() {
+        return qty * product.getUnitPrice();
+    }
+    
+    //calculates the tax for all items of the sale
+    public final double getTaxAmount(){
+        return 0;
+    }
+    
     //constructor-- pass in productID and quantity
     public LineItem(String prodId, int qty, DataAccessStrategy db) {
         this.db = db;
